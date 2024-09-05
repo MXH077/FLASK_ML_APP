@@ -1,0 +1,113 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Input</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Data for Prediction</h2>
+        <form action="/predict" method="POST">
+            <!-- 其他特征输入 -->
+            <div class="form-group">
+                <label for="loanAmnt">Loan Amount:</label>
+                <input type="number" class="form-control" id="loanAmnt" name="loanAmnt" required>
+            </div>
+            <div class="form-group">
+                <label for="interestRate">Interest Rate:</label>
+                <input type="number" class="form-control" id="interestRate" name="interestRate" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="installment">Installment:</label>
+                <input type="number" class="form-control" id="installment" name="installment" required>
+            </div>
+            <div class="form-group">
+                <label for="subGrade">SubGrade (A1 - G5):</label>
+                <input type="text" class="form-control" id="subGrade" name="subGrade" pattern="[A-G][1-5]" title="SubGrade must be a letter A-G followed by a number 1-5" required>
+            </div>
+            <div class="form-group">
+                <label for="ficoRangeLow">FICO Range Low:</label>
+                <input type="number" class="form-control" id="ficoRangeLow" name="ficoRangeLow" required>
+            </div>
+            <div class="form-group">
+                <label for="revolBal">Revolving Balance:</label>
+                <input type="number" class="form-control" id="revolBal" name="revolBal" required>
+            </div>
+            <div class="form-group">
+                <label for="totalAcc">Total Accounts:</label>
+                <input type="number" class="form-control" id="totalAcc" name="totalAcc" required>
+            </div>
+            <div class="form-group">
+                <label for="dti">DTI:</label>
+                <input type="number" class="form-control" id="dti" name="dti" required>
+            </div>
+            <div class="form-group">
+                <label for="purpose">Purpose:</label>
+                <select class="form-control" id="purpose" name="purpose">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="isDefault">Is Default:</label>
+                <select class="form-control" id="isDefault" name="isDefault">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <!-- 新增字段输入 -->
+            <div class="form-group">
+                <label for="grade">Grade:</label>
+                <select class="form-control" id="grade" name="grade" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="annualIncome">Annual Income:</label>
+                <input type="number" class="form-control" id="annualIncome" name="annualIncome" required>
+            </div>
+            <div class="form-group">
+                <label for="employmentTitle">Employment Title:</label>
+                <input type="number" class="form-control" id="employmentTitle" name="employmentTitle" required>
+            </div>
+            <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="number" class="form-control" id="id" name="id" required>
+            </div>
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="number" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="policyCode">Policy Code:</label>
+                <select class="form-control" id="policyCode" name="policyCode" required>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="openAcc">Open Accounts:</label>
+                <input type="number" class="form-control" id="openAcc" name="openAcc" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

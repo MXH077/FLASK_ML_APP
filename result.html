@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>The prediction is: {{ prediction }}</p>
+
+    {% if prediction == 0 %}
+        <p>This indicates a low risk of default.</p>
+    {% elif prediction == 1 %}
+        <p>This indicates a high risk of default.</p>
+    {% endif %}
+</body>
+</html>
